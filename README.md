@@ -1,2 +1,11 @@
 # GoCache
-My custom implementation of a cache like redis/dragonfly to use with unix socket domain
+
+This is my custom implementation of a cache like redis/dragonfly using with unix socket domain!
+
+# TODO
+
+* Stress testing
+* Write proper tests
+* Test it with and database
+* Build bloom filter variations for different data types
+* Create a proper bloom filter generic interface
