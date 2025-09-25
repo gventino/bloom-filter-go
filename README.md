@@ -20,7 +20,7 @@ The main characteristic that sets it apart is the use of Unix Domain Sockets (UD
 ## Key Features
 
 - **Extreme Performance**: Communication via Unix Sockets for near-instantaneous IPC.
-- **Simple API**: Intuitive client interface for operations like SET, GET, and DELETE.
+- **Simple API**: Intuitive client interface for operations like ADD and EXISTS
 - **Lightweight and Minimal**: Written in pure Go, with no external dependencies.
 
 ## Why use Unix Sockets?
@@ -34,7 +34,7 @@ Unlike TCP/IP, which is designed for communication between different machines on
 bloom-filter-go is ideal for microservice architectures or monolithic applications running on the same host that need a shared bloom-filter with ultra-high speed.
 
 ## Roadmap (TODO)
-
+- [ ] **Implement the MEXISTS and MADD on USD**
 - [ ] **Stress Testing**: Perform benchmarks and load tests to validate performance and stability.
 - [ ] **Test Coverage**: Write unit and integration tests to ensure code reliability.
 - [ ] **Database Integration**: Test bloom-filter-go for exists validation for a real database.
