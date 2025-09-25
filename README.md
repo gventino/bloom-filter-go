@@ -2,61 +2,51 @@
 <img width="512" height="512" alt="cache-go logo" src="https://github.com/user-attachments/assets/6547d51f-70b1-4525-aed4-9bd236594f8e">
 </p>
 <h1 align="center">cache-go</h1>
-
 <p align="center">
-Uma implementação customizada de um cache de alta performance em Go, inspirado no Redis/Dragonfly, com comunicação exclusiva via Unix Domain Sockets.
+A custom implementation of a high-performance cache in Go, inspired by Redis/Dragonfly, with exclusive communication via Unix Domain Sockets.
 </p>
-
 <p align="center">
 <img src="https://img.shields.io/badge/build-passing-green" alt="Build Status">
 <a href="https://golang.org/"><img src="https://img.shields.io/badge/Go-1.21+-blue.svg" alt="Go Version"></a>
 <a href="https://www.google.com/search?q=LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 </p>
 
-##  Sobre o Projeto
+## About the Project
 
-cache-go é um servidor de cache de em memória, projetado para ser extremamente rápido e eficiente em ambientes onde o cache e a aplicação rodam na mesma máquina.
+cache-go is an in-memory cache server designed to be extremely fast and efficient in environments where the cache and application run on the same machine.
 
-A principal característica que o diferencia é o uso de Unix Domain Sockets (UDS) para comunicação entre processos (IPC), eliminando o overhead da pilha de rede TCP/IP e resultando em latência drasticamente menor e maior throughput.
+The main characteristic that sets it apart is the use of Unix Domain Sockets (UDS) for inter-process communication (IPC), eliminating the TCP/IP network stack overhead and resulting in drastically lower latency and higher throughput.
 
-##  Features Principais
+## Key Features
 
-- Performance Extrema: Comunicação via Unix Sockets para IPC quase instantâneo.
+- **Extreme Performance**: Communication via Unix Sockets for near-instantaneous IPC.
+- **Simple API**: Intuitive client interface for operations like SET, GET, and DELETE.
+- **Lightweight and Minimal**: Written in pure Go, with no external dependencies.
 
-- API Simples: Interface de cliente intuitiva para operações como SET, GET e DELETE.
+## Why use Unix Sockets?
 
-- Leve e Mínimo: Escrito em Go puro, sem dependências externas.
+Unlike TCP/IP, which is designed for communication between different machines on a network, Unix Sockets are an IPC method that operates directly through the operating system kernel. This means:
 
-##  Por que usar Unix Sockets?
+* **Lower Latency**: No handshakes, packets, or network routes. Communication is direct.
+* **Higher Throughput**: Data transfer is faster as it avoids the complexity of the network stack.
+* **More Security**: Socket file access can be restricted using standard Unix file permissions (chmod), ensuring only authorized processes can connect to the cache.
 
-Ao contrário do TCP/IP, que é projetado para comunicação entre diferentes máquinas em uma rede, os Unix Sockets são um método de IPC que opera diretamente através do kernel do sistema operacional. Isso significa:
+cache-go is ideal for microservice architectures or monolithic applications running on the same host that need a shared cache with ultra-high speed.
 
-* Menor Latência: Não há handshakes, pacotes, ou rotas de rede. A comunicação é direta.
+## Roadmap (TODO)
 
-* Maior Throughput: A transferência de dados é mais rápida, pois evita a complexidade da pilha de rede.
+- [ ] **Stress Testing**: Perform benchmarks and load tests to validate performance and stability.
+- [ ] **Test Coverage**: Write unit and integration tests to ensure code reliability.
+- [ ] **Database Integration**: Test cache-go as a cache layer for a real database.
+- [ ] **Bloom Filters Implementation**:
+  - [ ] Build Bloom Filter variations optimized for different data types.
+  - [ ] Create a generic and flexible interface for using Bloom Filters in the cache.
+- [ ]  **Complete Documentation**: Detail the API and project architecture.
 
-* Mais Segurança: O acesso ao arquivo do socket pode ser restrito usando as permissões padrão de arquivos do Unix (chmod), garantindo que apenas processos autorizados possam se conectar ao cache.
+## Contributions
 
-cache-go é ideal para arquiteturas de microsserviços ou aplicações monolíticas que rodam no mesmo host e precisam de um cache compartilhado de altíssima velocidade.
+Contributions are very welcome! If you have ideas for improvements or found a bug, feel free to open an Issue or a Pull Request.
 
-##  Roadmap (TODO)
+### 📝 License
 
-- [ ]  Testes de Stress: Realizar benchmarks e testes de carga para validar a performance e a estabilidade.
-
-- [ ]  Cobertura de Testes: Escrever testes unitários e de integração para garantir a confiabilidade do código.
-
-- [ ]  Integração com Banco de Dados: Testar o cache-go como uma camada de cache para um banco de dados real.
-
-- [ ]  Implementação de Bloom Filters:
-
-- [ ] Construir variações de Bloom Filters otimizadas para diferentes tipos de dados.
-
-- [ ] Criar uma interface genérica e flexível para o uso de Bloom Filters no cache.
-
-- [ ] 📄 Documentação Completa: Detalhar a API e a arquitetura do projeto.
-
-##  Contribuições
-Contribuições são muito bem-vindas! Se você tem ideias para melhorias ou encontrou um bug, sinta-se à vontade para abrir uma Issue ou um Pull Request.
-
-### 📝 Licença
-Este projeto está sob a licença GNUv3. Veja o arquivo LICENSE para mais detalhes.
+This project is licensed under GNUv3. See the LICENSE file for more details.
