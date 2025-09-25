@@ -1,9 +1,9 @@
 <p align="center">
-<img width="512" height="512" alt="cache-go logo" src="https://github.com/user-attachments/assets/6547d51f-70b1-4525-aed4-9bd236594f8e">
+<img width="512" height="512" alt="bloom-filter-go logo" src="https://github.com/user-attachments/assets/6547d51f-70b1-4525-aed4-9bd236594f8e">
 </p>
-<h1 align="center">cache-go</h1>
+<h1 align="center">bloom-filter-go</h1>
 <p align="center">
-A custom implementation of a high-performance cache in Go, inspired by Redis/Dragonfly, with exclusive communication via Unix Domain Sockets.
+A custom implementation of a high-performance bloom filter in Go, inspired by Redis/Dragonfly implementation, with exclusive communication via Unix Domain Sockets.
 </p>
 <p align="center">
 <img src="https://img.shields.io/badge/build-passing-green" alt="Build Status">
@@ -13,7 +13,7 @@ A custom implementation of a high-performance cache in Go, inspired by Redis/Dra
 
 ## About the Project
 
-cache-go is an in-memory cache server designed to be extremely fast and efficient in environments where the cache and application run on the same machine.
+bloom-filter-go is an in-memory bloom filter server designed to be extremely fast and efficient in environments where the bloom filter and application run on the same machine.
 
 The main characteristic that sets it apart is the use of Unix Domain Sockets (UDS) for inter-process communication (IPC), eliminating the TCP/IP network stack overhead and resulting in drastically lower latency and higher throughput.
 
@@ -29,18 +29,18 @@ Unlike TCP/IP, which is designed for communication between different machines on
 
 * **Lower Latency**: No handshakes, packets, or network routes. Communication is direct.
 * **Higher Throughput**: Data transfer is faster as it avoids the complexity of the network stack.
-* **More Security**: Socket file access can be restricted using standard Unix file permissions (chmod), ensuring only authorized processes can connect to the cache.
+* **More Security**: Socket file access can be restricted using standard Unix file permissions (chmod), ensuring only authorized processes can connect to the bloom filter.
 
-cache-go is ideal for microservice architectures or monolithic applications running on the same host that need a shared cache with ultra-high speed.
+bloom-filter-go is ideal for microservice architectures or monolithic applications running on the same host that need a shared bloom-filter with ultra-high speed.
 
 ## Roadmap (TODO)
 
 - [ ] **Stress Testing**: Perform benchmarks and load tests to validate performance and stability.
 - [ ] **Test Coverage**: Write unit and integration tests to ensure code reliability.
-- [ ] **Database Integration**: Test cache-go as a cache layer for a real database.
+- [ ] **Database Integration**: Test bloom-filter-go for exists validation for a real database.
 - [ ] **Bloom Filters Implementation**:
   - [ ] Build Bloom Filter variations optimized for different data types.
-  - [ ] Create a generic and flexible interface for using Bloom Filters in the cache.
+  - [ ] Create a generic and flexible interface for using Bloom Filters.
 - [ ]  **Complete Documentation**: Detail the API and project architecture.
 
 ## Contributions
