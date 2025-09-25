@@ -1,5 +1,5 @@
 <p align="center">
-<img width="512" height="512" alt="bloom-filter-go logo" src="https://github.com/user-attachments/assets/6547d51f-70b1-4525-aed4-9bd236594f8e">
+<img width="512" height="512" alt="bloom-filter-go logo" src="https://github.com/user-attachments/assets/32a55c46-c427-4509-85ef-8bc264bb5de9">
 </p>
 <h1 align="center">bloom-filter-go</h1>
 <p align="center">
